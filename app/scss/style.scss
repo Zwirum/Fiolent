@@ -72,8 +72,10 @@
 }  
 .menu__list{
     margin: 0 auto;
+    display: flex;
     li{
-        display: inline-block;  
+        display: flex;
+        align-items: center;
         & + li{
             margin-left: 95px;
         }
@@ -83,6 +85,20 @@
             }
         }
     } 
+}
+.menu__btn{
+    display: none;
+    margin-right: 30px;
+    margin-left: auto;
+}
+.menu__btn-line{
+    height: 3px;
+    width: 30px;
+    border-radius: 3px;
+    background-color: #fff;
+    & + .menu__btn-line{
+        margin-top: 5px;
+    }
 }
 //header end 
 
@@ -150,6 +166,8 @@
     margin-bottom: 70px;
 }
 .advantages__item{
+    margin-left: 20px;
+    margin-right: 20px;
     text-align: center;
     margin-bottom: 30px;
     img{
@@ -224,6 +242,7 @@
     }
     .price__link{
         font-size: 14px;
+        text-decoration: underline;
     }
 }
 .price__main-link{
@@ -259,17 +278,20 @@
 
 //footer start
 .footer-top{
-    height: 270px;
+    min-height: 300px;
+    height: 100%;
     background-color: #545c74;
 }
 .footer-top__inner{
     margin: 0 60px;
     padding: 50px 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 .footer-top__item{
     max-width: 405px;
+    width: 100%;
     .footer-top__item-title{
         font-size: 20px;
         font-weight: 700;
@@ -284,13 +306,14 @@
     }
     .footer-top__item-text{
         font-size: 14px;
+        max-width: 250px;
     }
     .footer-top__item-list{
         padding-left: 45px;
         li{
             padding-bottom: 25px;
         }
-        .footer__adress{
+        .footer__list-icon{
             position: relative;
             &::before{
                 position: absolute;
@@ -303,38 +326,18 @@
                 height: 25px;
                 left: -40px;
                 top: -5px;
-            }
+            }  
         }
         .footer__phone{
-            position: relative;
             &::before{
-                position: absolute;
-                content: "";
                 background-image: url(../images/icons/phone.svg);
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                width: 25px;
-                height: 25px;
-                left: -40px;
-                top: -5px;
             }
         }
         .footer__email{
-            position: relative;
             &::before{
-                position: absolute;
-                content: "";
                 background-image: url(../images/icons/email.svg);
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                width: 25px;
-                height: 25px;
-                left: -40px;
-                top: -5px;
             }
-        }
+        }  
     }
     .footer-top__social{
         .footer-top__social-link{
@@ -350,6 +353,9 @@
             }
         }
     }
+}
+.footer-top__item.social__footer-item{
+    max-width: 180px;
 }
 .footer-bottom{
     background-color: $bg;
